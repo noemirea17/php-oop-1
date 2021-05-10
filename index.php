@@ -33,9 +33,6 @@ class Movie {
     public function getEta() {
         return $this->eta;
     }
-
-   
-
     
 
 }
@@ -43,10 +40,13 @@ class Movie {
 // primo film
 
 $pulpFiction = new Movie('Pulp Fiction', 'Inglese', '1994');
-$pulpFiction->genere = "giallo/drammatico";
+$pulpFiction->genere = "drammatico";
 $pulpFiction->durata = "2h 58m";
 $pulpFiction->setAnno('1994');
 $pulpFiction->setEta();
+
+
+// var_dump($pulpFiction);
 
 
 echo "Titolo: ".$pulpFiction->titolo."<br>";
@@ -61,7 +61,7 @@ echo "<br>";
 // secondo film
 
 $perfettiSconosciuti = new Movie('Perfetti Sconosciuti', 'Italiano', '2016');
-$perfettiSconosciuti->genere = "commedia/drammatico";
+$perfettiSconosciuti->genere = "commedia";
 $perfettiSconosciuti->durata = "1h 37m";
 $perfettiSconosciuti->setAnno('2016');
 $perfettiSconosciuti->setEta();
@@ -73,3 +73,34 @@ echo "Durata: ".$perfettiSconosciuti->durata."<br>";
 echo "Anno: ".$perfettiSconosciuti->getAnno()."<br>";
 echo "Età: ".$perfettiSconosciuti->getEta();
 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
+    <body>
+        <div>
+            <h1><?php echo "Titolo:"." ".$pulpFiction->titolo ?></h1>
+            <p><?php echo "Genere: ".$pulpFiction->genere ?></p>
+            <p><?php echo "Lingua: ".$pulpFiction->lingua ?></p>
+            <p><?php echo "Durata: ".$pulpFiction->durata ?></p>
+            <p><?php echo "Anno: ".$pulpFiction->getAnno() ?></p>
+
+        </div>
+        <div>
+            <h1><?php echo "Titolo:"." ".$perfettiSconosciuti->titolo ?></h1>
+            <p><?php echo "Genere: ".$perfettiSconosciuti->genere ?></p>
+            <p><?php echo "Lingua: ".$perfettiSconosciuti->lingua ?></p>
+            <p><?php echo "Durata: ".$perfettiSconosciuti->durata ?></p>
+            <p><?php echo "Anno: ".$perfettiSconosciuti->getAnno() ?></p>
+
+        </div>
+
+    
+    </body>
+</html>
